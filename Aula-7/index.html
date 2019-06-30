@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 7 - Diretivas v-bind class e style</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <button :class="btnClassLimpar" v-bind:style="btnStyleLimpar">LIMPAR</button>
+        <button :class="btnClassEnviar" v-bind:style="btnStyleEnviar">ENVIAR</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+            titulo: "Titulo",
+            //Organização de objetos e Arrays
+            btnClassLimpar: {
+                'btn-danger': true,
+                'btn-sm': true
+            },
+            btnClassEnviar: [
+                'btn-primary', {'btn-lg': false}
+            ],
+            btnStyleLimpar: [
+                {'font-size': '50px'},
+                {'text-transform': 'lowercase'}
+            ],
+            btnStyleEnviar:  {
+                'font-size': '10px'
+            }
+        }
+        });
+    </script>
+
+</body>
+</html>
