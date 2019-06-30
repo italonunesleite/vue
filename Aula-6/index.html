@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 6 - Diretivas v-bind</title>
+    <style media="screen">
+        .red {
+            color: red
+        }
+        .green {
+            color: green
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <!--v-bind ou apenas : é a mesma coisa-->
+        <img 
+        v-bind:src="imagem" 
+        v-bind:alt="alt" title="" id="" 
+        v-bind:data-img-large="'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/220px-Vue.js_Logo_2.svg.png'">
+        <br>
+        <p :class="corDoTexto">Texto qualquer</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+            titulo: "Titulo",
+            corDoTexto: "green",
+            imagem: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/220px-Vue.js_Logo_2.svg.png",
+            alt: "Vue Js",
+        }
+        });
+    </script>
+
+</body>
+</html>
