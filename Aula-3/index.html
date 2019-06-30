@@ -9,6 +9,9 @@
 <body>
     <div id="app">
         <h1>{{titulo}}</h1>
+        <!-- Se utilizar o v-show, o texto é exibido no codigo e o no css será display: nome -->
+        <p v-if="texto">texto qualquer</p>
+        <p v-else="texto">Não existe Texto</p>
         <div v-if="usuario.id == 1">
             Id: {{usuario.id}}<br>
             Nome: {{usuario.nome}}<br>
