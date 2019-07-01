@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 10 - Computed e Watch </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1><br>
+        {{primeiroNome}}<br>
+        {{segundoNome}}<br>
+        {{nomeCompleto}}<br>
+       
+       
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                titulo: "Titulo",
+                primeiroNome: "",
+                segundoNome: "",
+                nomeCompleto: "",
+            },
+            //propriedade para retornar valores de uma rotina
+            computed: {
+                   nomeCompleto() {
+                       return this.primeiroNome + '' + this.segundoNome;
+                   }
+                },
+             //observar quando uma variável foi alterada
+             watch: {
+                primeiroNome(novoValor) {
+                       this.atualizarUsuario();
+                   },
+                },
+             methods: {
+                 //chama a api para atualizar
+                atualizarUsuario(){
+                    console.log('Usuário Atualizado');
+                }
+             }
+
+          
+        });
+    </script>
+
+</body>
+</html>
