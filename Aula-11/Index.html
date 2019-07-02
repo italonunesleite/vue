@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 11 - Ciclo de Vida Instancia Vue </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1><br>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            
+            beforeCreate() {
+                console.log('beforeCreate');
+                console.log('titulo', this.titulo);
+            },
+            created() {
+                console.log('Created');
+                console.log('titulo', this.titulo);
+            },
+            beforeMount() {
+                console.log('beforeMount');
+                console.log('titulo', this.titulo);
+                console.log('el', this.$el);
+            },
+            mounted() {
+                console.log('mounted');
+                console.log('titulo', this.titulo);
+                console.log('el', this.$el);
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate');
+                console.log('el', this.$el);
+            },
+            Update() {
+                console.log('Update');
+            },
+
+
+            data: {
+                titulo: "Bem vindo ao Vue",
+            },
+            
+
+          
+        });
+    </script>
+
+</body>
+</html>
