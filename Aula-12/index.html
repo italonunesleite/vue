@@ -16,14 +16,14 @@
         <menu-bar></menu-bar>
     
     </div>
-    <!--template-->
-    <div id="menu">
+    <!--template base-->
+    <template id="menu">
             <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
             </ul>
-    </div> 
+    </template> 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     
     
@@ -33,7 +33,7 @@
         //lembrar de fazer a instancia do componentes antes da VUE.
         Vue.component('menu-bar', {
             template: "#menu"
-        })
+        });
         var app = new Vue({
             el: "#app",
             
